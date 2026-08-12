@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atalaia Inteligência · Ninguém fica sem resposta</title>
+<meta name="description" content="Atendimento com inteligência artificial no WhatsApp da sua empresa: resposta em segundos, 24 horas por dia, com o seu time no comando e tudo registrado.">
+<link rel="icon" type="image/svg+xml" href="logo/atalaia-icone.svg">
+<style>
+  :root {
+    --noite: #101820; --noite2: #182230;
+    --pedra: #F5F3EE; --painel: #FFFFFF;
+    --tinta: #1C242E; --tinta2: #5D6672; --linha: #E3DFD5;
+    --tocha: #B97F24; --tocha-viva: #D69A3A; --tocha-suave: #F6EBD8;
+    --petroleo: #2E4A56; --claro: #E8E4DA; --claro2: #97A0AC;
+    --verde-zap: #1E7A46;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--pedra); color: var(--tinta);
+    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .marca { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: 4px; }
+  h1, h2 { font-family: Georgia, "Times New Roman", serif; line-height: 1.15; text-wrap: balance; }
+  a { color: inherit; }
+  section { padding: 72px 20px; }
+  .miolo { max-width: 1020px; margin: 0 auto; }
+
+  /* ------ hero: a noite do vigia ------ */
+  .hero { background:
+      radial-gradient(ellipse 900px 480px at 78% 18%, rgba(214,154,58,.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 12% 92%, rgba(46,74,86,.35), transparent 65%),
+      var(--noite);
+    color: var(--claro); padding: 26px 20px 84px; }
+  .topo { max-width: 1020px; margin: 0 auto 64px; display: flex; align-items: baseline;
+    justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .topo .marca { font-size: 20px; }
+  .topo .marca span { color: var(--tocha-viva); }
+  .topo a.mini { color: var(--claro2); font-size: 14px; text-decoration: none;
+    border: 1px solid #33506A; border-radius: 999px; padding: 8px 18px; }
+  .topo a.mini:hover, .topo a.mini:focus-visible { color: var(--claro); border-color: var(--tocha); }
+  .hero-grade { max-width: 1020px; margin: 0 auto; display: grid;
+    grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+  @media (max-width: 860px) { .hero-grade { grid-template-columns: 1fr; } }
+  .hero h1 { font-size: clamp(34px, 5vw, 52px); margin-bottom: 20px; }
+  .hero h1 em { font-style: normal; color: var(--tocha-viva); }
+  .hero p.grande { font-size: 19px; color: var(--claro2); max-width: 32em; margin-bottom: 34px; }
+  .cta { display: inline-block; background: var(--tocha); color: #14100a; font-weight: 700;
+    font-size: 17px; padding: 16px 30px; border-radius: 10px; text-decoration: none; }
+  .cta:hover, .cta:focus-visible { background: var(--tocha-viva); }
+  .hero .nota { font-size: 13.5px; color: var(--claro2); margin-top: 14px; }
+
+  /* conversa demonstração */
+  .zap { background: #0B141A; border: 1px solid #22303C; border-radius: 18px;
+    padding: 18px 14px 14px; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+  .zap .cabec { display: flex; align-items: center; gap: 10px; padding: 0 6px 12px;
+    border-bottom: 1px solid #22303C; margin-bottom: 12px; }
+  .zap .bola { width: 34px; height: 34px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--tocha), var(--petroleo));
+    display: flex; align-items: center; justify-content: center; font-size: 17px; }
+  .zap .cabec b { color: var(--claro); font-size: 14.5px; display: block; }
+  .zap .cabec small { color: #6d7c88; font-size: 11.5px; }
+  .balao { max-width: 85%; padding: 9px 12px; border-radius: 10px; font-size: 13.8px;
+    line-height: 1.45; margin-bottom: 9px; color: #E7E3DB; position: relative; }
+  .deles { background: #202C33; margin-right: auto; border-bottom-left-radius: 3px; }
+  .nosso { background: #005C4B; margin-left: auto; border-bottom-right-radius: 3px; }
+  .balao small { display: block; text-align: right; font-size: 10px; color: rgba(231,227,219,.55); margin-top: 3px; }
+  .zap .selo { text-align: center; font-size: 11px; color: #6d7c88; margin: 4px 0 10px; }
+
+  /* ------ dor ------ */
+  .dor { background: var(--pedra); }
+  .dor .miolo { max-width: 760px; text-align: center; }
+  .dor h2 { font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 18px; }
+  .dor p { font-size: 18px; color: var(--tinta2); margin-bottom: 14px; }
+  .dor p b { color: var(--tinta); }
+
+  /* ------ como funciona ------ */
+  .como { background: var(--painel); border-top: 1px solid var(--linha); border-bottom: 1px solid var(--linha); }
+  .como h2, .confianca h2 { font-size: clamp(26px, 3.6vw, 36px); text-align: center; margin-bottom: 12px; }
+  .como .sub, .confianca .sub { text-align: center; color: var(--tinta2); margin-bottom: 44px; }
+  .passos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  @media (max-width: 760px) { .passos { grid-template-columns: 1fr; } }
+  .passo { background: var(--pedra); border: 1px solid var(--linha); border-radius: 14px; padding: 26px 24px; }
+  .passo .icone { font-size: 26px; margin-bottom: 12px; }
+  .passo h3 { font-family: Georgia, serif; font-size: 19px; margin-bottom: 8px; }
+  .passo p { font-size: 15px; color: var(--tinta2); }
+
+  /* ------ confiança ------ */
+  .confianca { background: var(--pedra); }
+  .nuncas { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .nunca { background: var(--painel); border: 1px solid var(--linha); border-left: 4px solid var(--tocha);
+    border-radius: 10px; padding: 16px 20px; font-size: 16px; }
+  .nunca b { color: var(--petroleo); }
+
+  /* ------ o nome ------ */
+  .nome { background: var(--noite2); color: var(--claro); }
+  .nome .miolo { max-width: 720px; text-align: center; }
+  .nome .marca { font-size: 15px; color: var(--tocha-viva); margin-bottom: 18px; display: block; }
+  .nome h2 { font-size: clamp(24px, 3.2vw, 32px); margin-bottom: 18px; }
+  .nome p { color: var(--claro2); font-size: 17px; margin-bottom: 12px; }
+  .nome p b { color: var(--claro); }
+
+  /* ------ CTA final ------ */
+  .fim { background: var(--pedra); text-align: center; }
+  .fim h2 { font-family: Georgia, serif; font-size: clamp(26px, 3.6vw, 36px); margin-bottom: 14px; }
+  .fim p { color: var(--tinta2); margin-bottom: 30px; }
+
+  footer { background: var(--noite); color: var(--claro2); font-size: 13px;
+    padding: 34px 20px; text-align: center; line-height: 2; }
+  footer .marca { color: var(--claro); font-size: 14px; }
+  footer .marca span { color: var(--tocha-viva); }
+  footer a { color: var(--claro2); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="topo">
+    <span class="marca" style="display:flex;align-items:center;gap:12px"><img src="logo/atalaia-icone.svg" alt="" width="38" height="38" style="border-radius:9px">ATALAIA <span>INTELIGÊNCIA</span></span>
+    <a class="mini" href="https://wa.me/5531992949134?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20atendimento%20com%20IA%20da%20Atalaia.">Falar com a gente</a>
+  </div>
+  <div class="hero-grade">
+    <div>
+      <h1>O WhatsApp da sua empresa, <em>respondido em segundos.</em> Sempre.</h1>
+      <p class="grande">Um atendente com inteligência artificial que conversa como o seu time,
+      atende de madrugada e no domingo, e entrega o cliente pronto pra quem fecha negócio,
+      com tudo registrado.</p>
+      <a class="cta" href="https://wa.me/5531992949134?text=Ol%C3%A1!%20Quero%20ver%20o%20atendente%20da%20Atalaia%20funcionando.">Quero ver funcionando →</a>
+      <p class="nota">Demonstração ao vivo no seu WhatsApp, sem compromisso.</p>
+    </div>
+    <div class="zap" aria-label="Exemplo real de conversa atendida pela Atalaia">
+      <div class="cabec">
+        <div class="bola">🛡️</div>
+        <div><b>Atendimento · sua empresa</b><small>online agora</small></div>
+      </div>
+      <div class="selo">sábado · 22:47</div>
+      <div class="balao deles">Boa noite! Vocês têm sensor de nível pra tanque de diesel?<small>22:47</small></div>
+      <div class="balao nosso">Boa noite! Temos sim. Você tem o código da peça ou uma foto dela? Assim já adianto sua cotação com o time. <small>22:47</small></div>
+      <div class="balao deles">Tenho o código aqui: PN 5096104-1. Preciso de 2 unidades<small>22:48</small></div>
+      <div class="balao nosso">Anotado: PN 5096104-1, 2 unidades ✅ Me passa seu e-mail e CNPJ? A cotação formal sai por e-mail, e segunda cedo o time já está com tudo pronto.<small>22:48</small></div>
+      <div class="selo">cliente atendido fora do horário · registrado no painel · time avisado</div>
+    </div>
+  </div>
+</div>
+
+<section class="dor">
+  <div class="miolo">
+    <h2>Toda conversa sem resposta é uma venda indo pro concorrente</h2>
+    <p>O cliente chama no WhatsApp às 19h. O time já foi. Ele espera dez minutos e manda a mesma mensagem pra outra empresa.</p>
+    <p><b>Ninguém fica sabendo:</b> contato que não vira negócio não deixa rastro.
+    Nem número, nem nome, nem motivo. Só a venda que não aconteceu.</p>
+  </div>
+</section>
+
+<section class="como">
+  <div class="miolo">
+    <h2>Como funciona</h2>
+    <p class="sub">Seu número de sempre. Seu jeito de falar. Seu time no comando.</p>
+    <div class="passos">
+      <div class="passo">
+        <div class="icone">⚡</div>
+        <h3>Resposta na hora, 24/7</h3>
+        <p>O atendente responde em segundos, no tom da sua empresa, calibrado com as
+        conversas reais do seu time, não com script genérico. Cliente novo, cliente de
+        sempre ou contato interno: cada um tratado do jeito certo.</p>
+      </div>
+      <div class="passo">
+        <div class="icone">🎯</div>
+        <h3>Seu time no comando</h3>
+        <p>O que precisa de gente cai numa fila organizada, com o resumo da conversa
+        pronto. Qualquer pessoa do time assume com um clique e continua pelo painel. Preço, prazo e negociação continuam sendo de humanos.</p>
+      </div>
+      <div class="passo">
+        <div class="icone">📊</div>
+        <h3>Pela primeira vez, os números</h3>
+        <p>Todo contato registrado. Tempo de resposta, contatos fora do horário,
+        quem atendeu o quê, num relatório semanal pra gestão. O que não se mede,
+        não se melhora.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="confianca">
+  <div class="miolo">
+    <h2>O que ele nunca vai fazer</h2>
+    <p class="sub">Confiança se constrói dizendo também o que fica de fora.</p>
+    <div class="nuncas">
+      <div class="nunca"><b>Nunca inventa preço, prazo ou estoque.</b> O que é do seu time, continua do seu time: o atendente prepara, o humano fecha.</div>
+      <div class="nunca"><b>Nunca finge ser gente.</b> Se perguntarem, ele diz com naturalidade que é o assistente, e chama alguém do time na hora.</div>
+      <div class="nunca"><b>Nunca aplica menu de "digite 1, 2 ou 3".</b> Conversa de verdade, uma pergunta de cada vez.</div>
+      <div class="nunca"><b>Nunca deixa conversa sumir.</b> Se ninguém assumir no prazo, ele reavisa o time e depois avisa a gestão.</div>
+    </div>
+  </div>
+</section>
+
+<section class="nome">
+  <div class="miolo">
+    <span class="marca">POR QUE "ATALAIA"?</span>
+    <h2>O vigia que nunca dorme</h2>
+    <p>Nas cidades antigas, o atalaia era quem ficava na muralha enquanto todos dormiam: o primeiro a ver quem chegava, o responsável por ninguém ser pego de surpresa.</p>
+    <p><b>É exatamente isso que fazemos pelo seu atendimento:</b> alguém no posto, a
+    noite inteira, o fim de semana inteiro, pra nenhum cliente seu passar em branco.</p>
+  </div>
+</section>
+
+<section class="fim">
+  <div class="miolo">
+    <h2>Veja funcionando no seu WhatsApp, hoje</h2>
+    <p>Uma conversa de demonstração, sem compromisso: você manda a pergunta difícil, o vigia responde.</p>
+    <a class="cta" href="https://wa.me/5531992949134?text=Ol%C3%A1!%20Quero%20ver%20o%20atendente%20da%20Atalaia%20funcionando.">Chamar no WhatsApp →</a>
+  </div>
+</section>
+
+<footer>
+  <span class="marca">ATALAIA <span>INTELIGÊNCIA</span></span><br>
+  Ninguém fica sem resposta.<br>
+  <a href="https://www.instagram.com/atalaiainteligencia" rel="noopener">@atalaiainteligencia</a> ·
+  <a href="mailto:tulio.camargos@gmail.com">tulio.camargos@gmail.com</a><br>
+  Tulio Parreira Camargos Guimaraes Consultoria em Tecnologia da Informação Ltda · CNPJ 68.396.487/0001-07
+</footer>
+
+</body>
+</html>

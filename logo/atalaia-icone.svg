@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Atalaia Inteligência">
+  <defs>
+    <linearGradient id="chama" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B97F24"/>
+      <stop offset="1" stop-color="#E8B04B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- fundo noite -->
+  <rect width="512" height="512" rx="96" fill="#101820"/>
+
+  <!-- a chama da tocha -->
+  <path fill="url(#chama)" d="M256 88
+    c 26 34 44 52 44 82 c 0 26 -19 46 -44 46 c -25 0 -44 -20 -44 -46
+    c 0 -30 18 -48 44 -82 z"/>
+  <path fill="#101820" d="M256 148 c 12 16 19 24 19 37 c 0 12 -8 21 -19 21
+    c -11 0 -19 -9 -19 -21 c 0 -13 7 -21 19 -37 z" opacity=".55"/>
+
+  <!-- torre em forma de A: pernas -->
+  <g fill="#E8E4DA">
+    <!-- perna esquerda -->
+    <polygon points="216,240 246,240 200,424 156,424"/>
+    <!-- perna direita -->
+    <polygon points="266,240 296,240 356,424 312,424"/>
+    <!-- travessa do A (passarela da muralha) -->
+    <polygon points="212,330 300,330 310,362 202,362"/>
+    <!-- plataforma com ameias (topo da torre) -->
+    <path d="M192 240 l 128 0 0 -22 -26 0 0 12 -25 0 0 -12 -26 0 0 12 -25 0 0 -12 -26 0 z"/>
+  </g>
+
+  <!-- base da muralha -->
+  <g fill="#E8E4DA">
+    <rect x="132" y="424" width="248" height="18"/>
+    <path d="M132 424 l 0 -14 20 0 0 8 21 0 0 -8 20 0 0 14 z" opacity=".0"/>
+  </g>
+</svg>

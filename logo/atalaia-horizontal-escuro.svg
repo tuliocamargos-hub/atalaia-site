@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 260" role="img" aria-label="Atalaia Inteligência">
+  <defs>
+    <linearGradient id="chama" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B97F24"/>
+      <stop offset="1" stop-color="#E8B04B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ícone (torre-A com tocha), sem caixa, pra fundo escuro -->
+  <g transform="translate(10,10) scale(.47)">
+    <path fill="url(#chama)" d="M256 88
+      c 26 34 44 52 44 82 c 0 26 -19 46 -44 46 c -25 0 -44 -20 -44 -46
+      c 0 -30 18 -48 44 -82 z"/>
+    <path fill="#101820" d="M256 148 c 12 16 19 24 19 37 c 0 12 -8 21 -19 21
+      c -11 0 -19 -9 -19 -21 c 0 -13 7 -21 19 -37 z" opacity=".55"/>
+    <g fill="#E8E4DA">
+      <polygon points="216,240 246,240 200,424 156,424"/>
+      <polygon points="266,240 296,240 356,424 312,424"/>
+      <polygon points="212,330 300,330 310,362 202,362"/>
+      <path d="M192 240 l 128 0 0 -22 -26 0 0 12 -25 0 0 -12 -26 0 0 12 -25 0 0 -12 -26 0 z"/>
+      <rect x="132" y="424" width="248" height="18"/>
+    </g>
+  </g>
+
+  <!-- nome -->
+  <text x="290" y="128" font-family="Georgia, 'Times New Roman', serif" font-weight="700"
+        font-size="86" letter-spacing="14" fill="#E8E4DA">ATALAIA</text>
+  <text x="292" y="196" font-family="Georgia, 'Times New Roman', serif" font-weight="700"
+        font-size="44" letter-spacing="22" fill="#D69A3A">INTELIGÊNCIA</text>
+</svg>
